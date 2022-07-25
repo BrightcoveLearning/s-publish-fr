@@ -1,0 +1,59 @@
+<h1>{{ page.title }}</h1>
+ <article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>When publishing videos using the Media module, you can use the player URL to preview the video or copy the iframe or In-Page embed code to paste into your web page or application.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Click the <strong>Shorten</strong> button next to the preview URL to generate&nbsp;a shortened preview URL.</aside>
+    <p >The <strong>Standard</strong> link displays the iframe embed code and the <strong>Advanced</strong> link displays the In-Page embed code. From the Player Management API perspective, you will also see the <strong>Advanced</strong> player code referred to as the <strong>embed_in_page</strong> implementation.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node15622-pub-code-options.png" /></figure>
+    <aside class="bcls-aside bcls-aside--information">Note: For information on working with responsive players, see the <a href="https://player.support.brightcove.com/styling/responsive-sizing-brightcove-player.html">Responsive Sizing for the Brightcove Player</a> developer document.</aside>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="iframe">iframe embed code (Standard)</h2>
+    <p>Typical iframe embed code will appear as follows:</p>
+    <pre class="line-numbers">
+<code class="language-html" translate="No">&lt;iframe src=&quot;https://players.brightcove.net/1507807800001/rf1BTdKk6M_default/index.html?videoId=6116779877001&quot;
+  allowfullscreen=&quot;&quot;
+  allow=&quot;encrypted-media&quot;
+  width=&quot;960&quot; height=&quot;540&quot;&gt;&lt;/iframe&gt;</code></pre>
+    <p>Some advantages of using the iframe embed code</p>
+    <ul>
+      <li>No collisions with existing JavaScript and/or CSS</li>
+      <li>Automatically responsive</li>
+      <li>The iframe eases use in social media apps or whenever the video will need to be used in an outside environment; for instance, Facebook will perceive the security threat is much less when the iframe is used versus putting the <code translate="No">&lt;video&gt;</code> tag and associated JavaScript on their site (which Facebook does not allow)</li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information language-editable">Note: If the selected player has been configured with the <a href="https://studio.support.brightcove.com/campaign/general/creating-campaign-enabled-player.html">Campaign plugin</a>, the iFrame code will not be displayed as the JavaScript code must be used.</aside>
+
+    <aside class="bcls-aside bcls-aside--information">Note: The iframe will be able to access the parent page's full URL as long as the parent page has the header <code translate="No">referrer-policy: no-referrer-when-downgrade</code>. This means that the header <code translate="No">referrer</code> will be sent to the iframe with the full parent page's URL because both protocols match.</aside>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="inpage">In-Page embed code (Advanced)</h2>
+    <p>Typical in-page embed code will appear as follows:</p>
+    <pre class="line-numbers">
+<code class="language-html" translate="No">&lt;video-js data-account=&quot;1507807800001&quot;
+  data-player=&quot;rf1BTdKk6M&quot;
+  data-embed=&quot;default&quot;
+  controls=&quot;&quot;
+  data-video-id=&quot;6116779877001&quot;
+  data-playlist-id=&quot;&quot;
+  data-application-id=&quot;&quot;
+  width=&quot;960&quot; height=&quot;540&quot;&gt;&lt;/video-js&gt;
+&lt;script src=&quot;https://players.brightcove.net/1507807800001/rf1BTdKk6M_default/index.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+    <p>Although integrating the In-Page publishing code can be more complex, using the In-Page code is best when the page containing the player needs to communicate with the player. Some examples of when to use the In-Page embed code include:</p>
+    <ul>
+      <li>The code in the containing page needs to listen for and act on player events</li>
+      <li>The player uses styles from the parent page</li>
+      <li>The iframe code will cause application logic to fail, like a redirect from the parent page</li>
+    </ul>
+    <p>Even if your final implementation does not use the iframe embed&nbsp;code, you can still use the In-Page code with a plugin for your JavaScript and a separate file for your CSS. This encapsulates your logic so that you can easily use it in multiple players.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: If you selected the iframe implementation when publishing from Studio, you will see the option <code translate="No">allowfullscreen</code> added in the iframe. If you are ever manually placing a Brightcove Player, either the in-page embed or iframe implementation, in an iframe you should also include this option for proper fullscreen functionality. If for some reason you nest a player in multiple iframes, all iframes should have the option added.</aside>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="recommend">Recommendation</h2>
+    <p>It is considered a best practice to use the Standard (iframe)) implementation unless some application logic requires the use of the Advanced (in-page) code. If you are using the Audience module to track viewer engagement, the Advanced (in-page)) embed code must be used.</p>
+  </section>
+
+</article>
