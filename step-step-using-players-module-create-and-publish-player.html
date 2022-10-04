@@ -1,165 +1,131 @@
 <article class="bcls-article">
-  <h1>{{ page.title }}</h1>
-  <summary>{{ page.description }}</summary>
-  <section class="bcls-section">
-{% if site.product_short == "Video Cloud" %}
-    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="3721051666001">&nbsp;</div>
-    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
-   {% endif %}
-    <p>After working through the steps in this topic, you should be able to:</p>
+  <h1>{{page.title}}</h1> <summary>{{page.description}}</summary> <section class="bcls-section"> {% if site.product_short == Video Cloud-fr/ %}
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="3721051666001">&nbsp;</div> <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script> {% endif %}
+    <p>Après avoir suivi les étapes de cette rubrique, vous devriez être en mesure de:</p>
     <ul>
-      <li>Navigate inside the Players module</li>
-      <li>Create a player</li>
-      <li>Set player properties</li>
-      <li>Pass a {{ site.product_short }} video ID to display in the player</li>
-      <li>Preview and publish a player</li>
-    </ul>
-    <aside class="bcls-aside bcls-aside--information">Note: If you are looking to publish a playlist or a single video to a player, use the publish function inside the Media module. For more information, see <a href="/publish/publishing-videos-and-playlists-media-module.html">Publishing Videos and Playlists with the Media Module</a>.</aside>
-  </section>
-  <section class="bcls-section">
-    <h2 id="audience">Audience</h2>
-    <p>Any video publisher who needs to create and publish videos using the Players module.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="prereq">Prerequisites</h2>
+      <li>Naviguez dans le module Players</li>
+      <li>Créer un lecteur
+</li>
+      <li>Définir les propriétés du lecteur</li>
+      <li>Transmettez un identifiant vidéo {{site.product_short}} à afficher dans le lecteur</li>
+      <li>Prévisualiser et publier un lecteur</li>
+    </ul> <aside class="bcls-aside bcls-aside--information">Remarque: Si vous souhaitez publier une liste de lecteur ou une seule vidéo sur un lecteur, utilisez la fonction de publication du module Médias. Pour plus d'informations, consultez<a href="/publish/publishing-videos-and-playlists-media-module.html"> Publier des vidéos et des listes de lecteur avec le module Médias</a>.</aside> </section> <section class="bcls-section">
+    <h2 id="audience">Public</h2>
+    <p>Tout éditeur de vidéos ayant besoin de créer et de publier des vidéos à l'aide du module Players.</p>  </section><section class="bcls-section">
+    <h2 id="prereq">Prérequis</h2>
     <ul>
-      <li>A {{ site.product_short }} account with access to the Players module</li>
-      <li>A video in your {{ site.product_short }} account to publish; The video used in this Quick Start can be downloaded <a href="//solutions.brightcove.com/bcls/docs/quickstart/oystercatcher.mp4">here</a> or you can use your own content</li>
-      <li>If you are using the video provided with this Quick Start, upload it to your {{ site.product_short }} account</li>
-    </ul>
-  </section>
-  <section class="bcls-section">
+      <li>Un compte {{site.product_short}} avec accès au module Players</li>
+      <li>Une vidéo à publier sur votre compte {{site.product_short}}&nbsp;; La vidéo utilisée dans ce Quick Start peut être téléchargée<a href="//solutions.brightcove.com/bcls/docs/quickstart/oystercatcher.mp4"> ici</a> ou vous pouvez utiliser votre propre contenu</li>
+      <li>Si vous utilisez la vidéo fournie avec ce Quick Start, téléchargez-la sur votre compte {{site.product_short}}</li>
+    </ul>  </section><section class="bcls-section">
     <h2 id="instructions">Instructions</h2>
-    <p>To create and publish a Brightcove player using {{ site.product }}, you will complete the following tasks:</p>
+    <p>Pour créer et publier un lecteur Brightcove à l'aide de {{site.product}}, vous devez effectuer les tâches suivantes:</p>
     <ul>
-      <li><a href="#create">Create a player</a></li>
-      <li><a href="#size">Configure the player dimensions</a></li>
-      <li><a href="#publish">Publish and preview the player</a></li>
-      <li><a href="#assign">Dynamically assign video content to the player</a></li>
-      <li><a href="#style">Configure styling properties</a></li>
-      <li><a href="#social">Configure social sharing properties</a></li>
-      <li><a href="#preview">Preview the player</a></li>
-      <li><a href="#final">Publish the final player</a></li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h2 id="create">Creating a player</h2>
-    <p>To create a new player, follow these steps.</p>
+      <li><a href="#create">Créer un lecteur
+</a></li>
+      <li><a href="#size">Configuration des dimensions du lecteur</a></li>
+      <li><a href="#publish">Publiez et prévisualisez le lecteur</a></li>
+      <li><a href="#assign">Attribuer dynamiquement du contenu vidéo au lecteur</a></li>
+      <li><a href="#style">Configuration des propriétés de style</a></li>
+      <li><a href="#social">Configuration des propriétés de partage social</a></li>
+      <li><a href="#preview">Prévisualisez le lecteur</a></li>
+      <li><a href="#final">Publiez le lecteur
+ final</a></li>
+    </ul>  </section><section class="bcls-section">
+    <h2 id="create">Création d'un lecteur
+</h2>
+    <p>Pour créer un nouveau lecteur, procédez comme suit.</p>
     <ol class="bcls-tasklist">
-      <li>Login to {{ site.product }}.</li>
-      <li>If you have multiple accounts, click the profile icon in the top right of the page and  select the account you would like to create the player in.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-current-account.png" /></figure>
+      <li>Connectez-vous à {{site.product}}.</li>
+      <li>Si vous avez plusieurs comptes, cliquez sur l'icône de profil en haut à droite de la page et sélectionnez le compte dans lequel vous souhaitez créer le lecteur
+. <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-current-account.png" /></figure>
       </li>
-      <li>Open the <strong>Players</strong> module.</li>
-      <li>Click <span class="button-blue"><i class="button-icon" data-feather="plus"></i>Add player</span></li>
-      <li>Enter a <strong> Name </strong>and <strong>Short Description</strong> for the player. For this Quick Start, the player name will be <strong>Sample Player</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-new-player-dialog.png" /></figure>
+      <li>Ouvrez le<strong> module</strong> Players.</li>
+      <li>Cliquez sur<span class="button-blue"> Ajouter un lecteur
+</span></li>
+      <li>Saisissez un<strong> nom</strong> et une<strong> brève description</strong> pour le lecteur
+. Pour ce Quick Start, le nom du lecteur sera<strong> Sample Player</strong>. <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-new-player-dialog.png" /></figure>
       </li>
-      <li>Confirm that the player appears in the list of players.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-list-of-players.png" /></figure>
+      <li>Vérifiez que le lecteur
+ apparaît dans la liste des lecteur
+s. <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-list-of-players.png" /></figure>
       </li>
     </ol>
-    <p>When a new player is created using the Players module, the player is built using the latest player version as published by Brightcove. To see the player version, open the Players module and click on the player that you want to check. The Player Information properties will display the <strong>Published Player Version</strong>.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-player-version.png" /></figure>
-    <p>Note that all players may not be the same version. As Brightcove continues to develop and improve the Brightcove player, new player versions will be released. By default, updates are applied to all players automatically. To prevent auto-updating of a player, you must set the <strong>Update Mode</strong> setting to <strong>Manual</strong> (also known as locking a player). For more information, see <a href="/players/setting-player-update-mode-and-version.html">Setting the Player Update Mode and Version</a>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="size">Configuring the player dimensions</h2>
-    <p>By adding player dimensions, width and height parameters will be added to the iframe embed code. If you leave the dimensions blank, the player can be put into a <code translate="No">&lt;div&gt;</code> of any size on a page and it will expand to fill the space. To set the player dimensions, follow these steps.</p>
+    <p>Lorsqu'un nouveau lecteur est créé à l'aide du module Players, le lecteur est créé à l'aide de la dernière version du lecteur publiée par Brightcove. Pour voir la version du lecteur, ouvrez le module Players et cliquez sur le lecteur que vous souhaitez vérifier. Les propriétés Informations sur le lecteur affichent la version<strong> publiée du lecteur</strong>.</p> <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-player-version.png" /></figure>
+    <p>Notez que tous les lecteurs peuvent ne pas être de la même version. Alors que Brightcove continue de développer et d'améliorer le lecteur Brightcove, de nouvelles versions de lecteur seront publiées. Par défaut, les mises à jour sont appliquées automatiquement à tous les lecteur
+s. Pour empêcher la mise à jour automatique d'un lecteur, vous devez définir le<strong> paramètre Mode de</strong> mise à jour sur<strong> Manuel</strong> (également appelé verrouillage d'un lecteur). Pour plus d'informations, consultez<a href="/players/setting-player-update-mode-and-version.html"> Configuration du mode et de la version de mise à jour du lecteur</a>.</p>  </section><section class="bcls-section">
+    <h2 id="size">Configuration des dimensions du lecteur</h2>
+    <p>En ajoutant les dimensions du lecteur, les paramètres de largeur et de hauteur seront ajoutés au code intégré de l'iframe. Si vous laissez les dimensions vides, le lecteur peut être placé dans un <code translate="No">&lt;div&gt;</code> de n'importe quelle taille sur une page et il s'agrandira pour remplir l'espace. Pour définir les dimensions du lecteur, procédez comme suit.</p>
      <ol class="bcls-tasklist-restart">
-      <li>Click the link for the <strong>Sample Player</strong> to open the player properties page.</li>
-      <li>Click <strong>Player Information</strong> in the left navigation menu.</li>
-      <li>Set the <strong>Aspect Ratio</strong> to <strong>16:9</strong>.</li>
-      <li>Set the <strong>Player Width</strong> to <strong>640</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-settings-props.png" /></figure>
+      <li>Cliquez sur le lien du lecteur<strong> Sample pour</strong> ouvrir la page des propriétés du lecteur.</li>
+      <li>Cliquez sur Informations sur le<strong> lecteur
+</strong> dans le menu de navigation de gauche.</li>
+      <li>Réglez le rapport<strong> hauteur/largeur</strong> sur<strong> 16:9</strong>.</li>
+      <li>Réglez la largeur du<strong> lecteur</strong> sur<strong> 640</strong>. <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-settings-props.png" /></figure>
       </li>
-      <li>Click <span class="button-blue"> Save </span>.</li>
+      <li>Cliquez sur<span class="button-blue"> Enregistrer</span>.</li>
     </ol>
-    <p>For more information on the Player Information properties, see <a href="/players/setting-player-information-properties.html">Setting Player Information Properties</a>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="publish">Publishing and previewing the player</h2>
-    <p>Publishing the player will push the changes to the published player. For more information on preview players, published players and player publishing code, see <a href="/players/generating-player-embed-code.html">Generating Player Embed&nbsp;Code</a>.</p>
-    <p>To publish the player, follow these steps.</p>
+    <p>Pour plus d'informations sur les propriétés des informations du lecteur, consultez la section<a href="/players/setting-player-information-properties.html"> Définition des propriétés des informations du lecteur</a>.</p>  </section><section class="bcls-section">
+    <h2 id="publish">Publication et prévisualisation du lecteur</h2>
+    <p>La publication du lecteur répercutera les modifications sur le lecteur publié. Pour plus d'informations sur les lecteurs d'aperçu, les lecteurs publiés et le code de publication des lecteurs, consultez<a href="/players/generating-player-embed-code.html"> Génération du code intégré du lecteur</a>.</p>
+    <p>Pour publier le lecteur, procédez comme suit.</p>
     <ol class="bcls-tasklist-restart">
-      <li>Click  <span class="button-blue">Publish &amp; Embed </span>  &gt; and then <span class="button-blue"> Publish Changes </span> to publish the player.</li>
-      <li>Confirm that the publish was successful.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-publish-ok.png" /></figure>
+      <li>Cliquez sur<span class="button-blue"> Publier et intégrer</span> &gt; puis sur<span class="button-blue"> Publier les modifications</span> pour publier le lecteur.</li>
+      <li>Vérifiez que la publication a réussi. <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-publish-ok.png" /></figure>
       </li>
-      <li>Copy the <strong>Player URL</strong> and open it in  a new browser tab. The player will be empty as no video has been assigned to the player.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-published-player-code.png" /></figure>
+      <li>Copiez l'URL du<strong> lecteur</strong> et ouvrez-la dans un nouvel onglet du navigateur. Le lecteur sera vide car aucune vidéo ne lui a été attribuée. <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-published-player-code.png" /></figure>
       </li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="assign">Dynamically assigning video content to the player</h2>
-    <p>For this Quick Start, we will dynamically assign a {{ site.product_short }} video ID to the player by using a URL parameter. To do this, follow these steps.</p>
+    </ol>  </section><section class="bcls-section">
+    <h2 id="assign">Attribution dynamique du contenu vidéo au lecteur</h2>
+    <p>Pour ce Quick Start, nous attribuerons dynamiquement un identifiant vidéo {{site.product_short}} au lecteur à l'aide d'un paramètre d'URL. Pour ce faire, procédez comme suit.</p>
     <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Media</strong> module and locate the video you want to publish. The video ID will appear below the video name.
-<figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-vc-video-id.png" /></figure>
+      <li>Ouvrez le<strong> module</strong> Médias et localisez la vidéo que vous souhaitez publier. L'identifiant de la vidéo apparaît sous le nom de la vidéo. <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-vc-video-id.png" /></figure>
       </li>
-      <li>Copy the video ID to the clipboard.</li>
-      <li>Return to the tab with the preview player. To dynamically pass in the video ID to display, append the following to the URL and press enter:<br />
-        <code translate="No">?videoId=your video id</code>
-        <aside class="bcls-aside bcls-aside--information">Note: The URL parameter name is case sensitive.</aside>
-        <p>The complete URL will look something like:</p>
-        <code translate="No">https://players.brightcove.net/1486906377/Ctzra7vEL_default/index.html?videoId=5798846643001</code></li>
-      <li>Confirm the video appears.</li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="style">Configuring styling properties</h2>
-    <p>The style properties are used to customize the appearance of the player. For more information on styling players, see <a href="/players/styling-players.html">Styling Players</a>.</p>
-    <p>To configure the style settings, return to the Players module and follow these steps.</p>
+      <li>Copiez l'ID de la vidéo dans le presse-papiers.</li>
+      <li>Revenez à l'onglet contenant l'aperçu du lecteur. Pour transmettre dynamiquement l'ID de la vidéo à afficher, ajoutez ce qui suit à l'URL et appuyez sur Entrée:<br /> <code translate="No">? videoID=Votre identifiant vidéo</code> <aside class="bcls-aside bcls-aside--information"> Remarque: Le nom du paramètre URL est sensible à la casse.</aside>
+        <p>L'URL complète ressemblera à ceci:</p> <code translate="No">https://players.brightcove.net/1486906377/Ctzra7vEL_default/index.html?videoId=5798846643001</code></li>
+      <li>Vérifiez que la vidéo s'affiche.</li>
+    </ol>  </section><section class="bcls-section">
+    <h2 id="style">Configuration des propriétés de style</h2>
+    <p>Les propriétés de style sont utilisées pour personnaliser l'apparence du lecteur. Pour plus d'informations sur le style des lecteur
+s, voir<a href="/players/styling-players.html"> Styling Players</a>.</p>
+    <p>Pour configurer les paramètres de style, revenez au module Players et suivez ces étapes.</p>
     <ol class="bcls-tasklist-restart">
-      <li>Click the link for the <strong>Sample Player</strong> to open the player properties page.</li>
-      <li>Click <strong>Styling</strong> in the left navigation menu.</li>
-      <li>Select a <strong>Play Button Shape</strong> and <strong>Play Button Position</strong>.</li>
-      <li>In the <strong>Color Theme</strong> section, click the <strong>Play Button</strong> color picker.</li>
-      <li>Click the red color on the ride side of the control. Click in the square to select a shade of red.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-progress-bar-color.png" /></figure>
+      <li>Cliquez sur le lien du lecteur<strong> Sample pour</strong> ouvrir la page des propriétés du lecteur.</li>
+      <li>Cliquez sur<strong> Style</strong> dans le menu de navigation de gauche.</li>
+      <li>Sélectionnez une forme de bouton de <strong></strong>lecteur<strong> et une position de bouton de lecteur</strong>.</li>
+      <li>Dans la<strong> section Thème de</strong> couleur, cliquez sur le sélecteur de<strong> couleurs du bouton de</strong> lecteur.</li>
+      <li>Cliquez sur la couleur rouge du côté conduite de la commande. Cliquez sur le carré pour sélectionner une nuance de rouge. <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-progress-bar-color.png" /></figure>
       </li>
-      <li>Click outside of the control to collapse the color picker.</li>
-      <li>Note that below the preview player there is a message stating that changes have been made to the player.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-unpub-changes.png" /></figure>
+      <li>Cliquez en dehors du contrôle pour réduire le sélecteur de couleurs.</li>
+      <li>Notez qu'en dessous de l'aperçu du lecteur, il y a un message indiquant que des modifications ont été apportées au lecteur. <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-unpub-changes.png" /></figure>
       </li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="social">Configuring social sharing properties</h2>
-    <p>When social sharing is enabled, a share icon will appear at the bottom of the player next to the playhead. This will allow viewers to share your content out to popular social media sites. For more information on configuring the social properties for a player, see <a href="/players/configuring-social-properties-player.html">Configuring the Social Properties for a Player</a>.</p>
-    <p>To configure the social settings, follow these steps.</p>
+    </ol>  </section><section class="bcls-section">
+    <h2 id="social">Configuration des propriétés de partage social</h2>
+    <p>Lorsque le partage social est activé, une icône de partage apparaît en bas du lecteur à côté de la tête de lecteur. Cela permettra aux spectateurs de partager votre contenu sur des sites de réseaux sociaux populaires. Pour plus d'informations sur la configuration des propriétés sociales d'un lecteur, consultez<a href="/players/configuring-social-properties-player.html"> Configuration des propriétés sociales d'un lecteur</a>.</p>
+    <p>Pour configurer les paramètres sociaux, procédez comme suit.</p>
     <ol class="bcls-tasklist-restart">
-      <li>Click <strong>Social</strong> in the left navigation menu.</li>
-      <li>Check the <strong>Enable Sharing </strong>checkbox.</li>
-      <li>Select all of the social media sites.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-social-sharing-settings.png" /></figure>
+      <li>Cliquez sur<strong> Social</strong> dans le menu de navigation de gauche.</li>
+      <li>Cochez la<strong> case</strong> Activer le partage.</li>
+      <li>Sélectionnez tous les sites de réseaux sociaux. <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-social-sharing-settings.png" /></figure>
       </li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="preview">Previewing the player</h2>
-    <p>The preview player on the page should reflect the styling and social changes that have been made to the player.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-studio-preview-player.png" /></figure>
-    <aside class="bcls-aside bcls-aside--information">Note: If you return to the published player that we opened earlier and refresh the page, you will notice that these changes are not live in the published player. The color and social changes will not be pushed to the published player until the changes have been published inside of the Players module.</aside>
-    <p>It is also possible to generate the publishing code for the preview player. For example, maybe the marketing department needs to approve all changes made to the player. You can send them a URL to the preview player so they can approve the changes. To generate the publishing code for the preview player, follow these steps.</p>
+    </ol>  </section><section class="bcls-section">
+    <h2 id="preview">Prévisualisation du lecteur</h2>
+    <p>L'aperçu du lecteur sur la page doit refléter les modifications de style et de réseaux sociaux qui ont été apportées au lecteur.</p> <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-studio-preview-player.png" /></figure> <aside class="bcls-aside bcls-aside--information">Remarque: Si vous revenez au lecteur publié que nous avions ouvert précédemment et que vous actualisez la page, vous remarquerez que ces modifications ne sont pas présentes dans le lecteur publié. Les modifications de couleur et de réseaux sociaux ne seront pas répercutées sur le lecteur publié tant que les modifications n'auront pas été publiées dans le module Players.</aside>
+    <p>Il est également possible de générer le code de publication pour le lecteur de prévisualisation. Par exemple, le service marketing doit peut-être approuver toutes les modifications apportées au lecteur. Vous pouvez leur envoyer une URL vers le lecteur d'aperçu afin qu'ils puissent approuver les modifications. Pour générer le code de publication pour le lecteur d'aperçu, procédez comme suit.</p>
     <ol class="bcls-tasklist-restart">
-      <li>On the Players module homepage, click <strong>Embed Code &amp; URL</strong> and click <strong>Preview Player</strong>. The Preview Player Embed Code dialog will display.</li>
-      <li>Click the <strong>Player URL</strong> to open the preview player in a new browser tab.</li>
-      <li>The preview player should occupy the entire width of the browser page and have a Brightcove logo overlay indicating that it is the preview player. Confirm that the color changes and viral promotion changes are visible.</li>
-      <li>Leave the preview player open and return to the Players module.</li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="final">Publishing the final player</h2>
-    <p>The changes in the preview player will not be visible in the published player until the changes are published. To publish the changes, follow these steps.</p>
+      <li>Sur la page d'accueil du module Players,<strong> cliquez sur Code intégré</strong> et URL, puis sur<strong> Aperçu du lecteur</strong>. La boîte de dialogue Aperçu du code incorporé du lecteur s'affiche.</li>
+      <li>Cliquez sur l'URL du<strong> lecteur</strong> pour ouvrir l'aperçu du lecteur dans un nouvel onglet du navigateur.</li>
+      <li>Le lecteur de prévisualisation doit occuper toute la largeur de la page du navigateur et comporter un logo Brightcove superposé indiquant qu'il s'agit du lecteur de prévisualisation. Vérifiez que les changements de couleur et les changements de promotion virale sont visibles.</li>
+      <li>Laissez le lecteur de prévisualisation ouvert et revenez au module Players.</li>
+    </ol>  </section><section class="bcls-section">
+    <h2 id="final">Publier le lecteur
+ final</h2>
+    <p>Les modifications apportées au lecteur d'aperçu ne seront pas visibles dans le lecteur publié tant que les modifications ne seront pas publiées. Pour publier les modifications, procédez comme suit.</p>
     <ol class="bcls-tasklist-restart">
-      <li>In the Players module, click <span class="button-blue">Publish &amp; Embed </span>  &gt; and then <span class="button-blue"> Publish Changes </span> to publish the player.</li>
-      <li>Confirm that the publish was successful.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-publish-ok.png" /></figure>
+      <li>Dans le module Players, cliquez sur<span class="button-blue"> Publish &amp; Embed</span> &gt; puis sur<span class="button-blue"> Publier les modifications</span> pour publier le lecteur.</li>
+      <li>Vérifiez que la publication a réussi. <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node14057-publish-ok.png" /></figure>
       </li>
-      <li>Return to the browser tab with the published player. Remember, the preview player will display a Brightcove logo overlay.</li>
-      <li>Refresh the page and verify that the color change and viral promotion settings are now visible in the published player. Note that there might be a slight delay before the changes appear in the published player.</li>
-    </ol>
-  </section>
-</article>
+      <li>Revenez à l'onglet du navigateur avec le lecteur publié. N'oubliez pas que le lecteur de prévisualisation affichera un logo Brightcove superposé.</li>
+      <li>Actualisez la page et vérifiez que les paramètres de changement de couleur et de promotion virale sont désormais visibles dans le lecteur publié. Notez qu'il peut y avoir un léger délai avant que les modifications n'apparaissent dans le lecteur publié.</li>
+    </ol>   </section></article>
